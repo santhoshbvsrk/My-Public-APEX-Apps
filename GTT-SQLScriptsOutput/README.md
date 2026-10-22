@@ -7,4 +7,4 @@ After committing the update, the script exports the matching rows from the main 
 **Operational note:** Run the GTT workflow together in one script execution. The update is committed before the export, so an export failure does not roll back the table changes. Check the data before rerunning to avoid incrementing quantities twice.
 
 **NOTE:** Before creating the credentials you need to give access to DBMS_CLOUD on the APEX parsing schema using the below command.
-GRANT EXECUTE ON DBMS_CLOUD TO <Parsing Schema>;
+GRANT EXECUTE ON DBMS_CLOUD TO <Parsing-Schema>;
