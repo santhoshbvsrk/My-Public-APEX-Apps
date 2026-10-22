@@ -5,3 +5,6 @@ The SQL Script uses `CTS_ORDER_ITEMS_GTT` as a temporary staging table for order
 After committing the update, the script exports the matching rows from the main table as a CSV file to OCI Object Storage using `DBMS_CLOUD.EXPORT_DATA`. An APEX page process can retrieve that file with `DBMS_CLOUD.GET_OBJECT` and deliver it to the browser using `APEX_HTTP.DOWNLOAD`.
 
 **Operational note:** Run the GTT workflow together in one script execution. The update is committed before the export, so an export failure does not roll back the table changes. Check the data before rerunning to avoid incrementing quantities twice.
+
+**NOTE:** Before creating the credentials you need to give access to DBMS_CLOUD on the APEX parsing schema using the below command.
+GRANT EXECUTE ON DBMS_CLOUD TO WKSP_CUSTOMERPOCS;
